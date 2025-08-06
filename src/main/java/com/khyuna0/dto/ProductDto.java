@@ -1,7 +1,7 @@
 package com.khyuna0.dto;
 
 public class ProductDto {
-	private int num;
+	//private int num;
 	private String product;
 	private String color;
 	private String quantity;
@@ -11,9 +11,8 @@ public class ProductDto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ProductDto(int num, String product, String color, String quantity) {
+	public ProductDto( String product, String color, String quantity) {
 		super();
-		this.num = num;
 		this.product = product;
 		this.color = color;
 		this.quantity = quantity;
@@ -38,13 +37,6 @@ public class ProductDto {
 		this.quantity = quantity;
 	}
 
-	public int getNum() {
-		return num;
-	}
-
-	public void setNum(int num) {
-		this.num = num;
-	}
 	
 	
 	

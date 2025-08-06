@@ -10,7 +10,7 @@
 	<%
 		session.invalidate();
 	%>
-	<h2>장바구니가 비었습니다.</h2>
+	<h2>장바구니를 비웠습니다.</h2>
 	<a href="productList.jsp">상품 담기</a> <br><br>
 </body>
 </html>

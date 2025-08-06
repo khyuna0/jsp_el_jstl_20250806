@@ -24,7 +24,7 @@
 			cart = new ArrayList<ProductDto>(); 
 		}
 		
-		cart.add(new ProductDto((cart.size()+ 1),product, productColor, quantity));
+		cart.add(new ProductDto(product, productColor, quantity));
 		session.setAttribute("cart", cart); // 세션에 상품 목록 저장
 	%>
 	
