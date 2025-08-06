@@ -10,6 +10,22 @@
 <head>
 <meta charset="UTF-8">
 <title>자유게시판</title>
+<style type="text/css">
+	table {
+		width: 800px;
+		border-collapse: collapse;
+	}
+	th, td {
+		border: 1px solid; #dddddd;
+		padding: 10px;
+		text-align: center;
+	}
+	th {
+		background-color: #f5f5f5;
+
+	}
+
+</style>
 </head>
 <body>
 	<!-- 게시판 글 리스트 -->
@@ -27,7 +43,7 @@
 	%>
 	<h2>자유 게시판 목록</h2>
 	<hr>
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table>
 		<tr>
 			<th>No.</th>
 			<th>제목</th>
@@ -35,10 +51,10 @@
 			<th>날짜</th>
 		</tr>
 		
-		<c:forEach var="boardDto" items="${boardList_request}">
+		<c:forEach var="boardDto" items="${boardList_request}"> <!-- items 에 배열 또는 컬렉션만 가능 -->
 			<tr>
 				<td>${boardDto.bnum}</td>
-				<td>${boardDto.btitle}</td>
+				<td><a href="#">${boardDto.btitle}</a></td>
 				<td>${boardDto.bwriter}</td>
 				<td>${boardDto.bdate}</td>
 			</tr>
