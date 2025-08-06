@@ -13,6 +13,7 @@ public class ProductDto {
 	
 	public ProductDto(int num, String product, String color, String quantity) {
 		super();
+		this.num = num;
 		this.product = product;
 		this.color = color;
 		this.quantity = quantity;

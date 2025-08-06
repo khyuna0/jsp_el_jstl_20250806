@@ -1,4 +1,4 @@
-<%@page import="com.khyuna0.dto.BoardDto"%>
+<%@page import="com.khyuna0.dto.ProductDto"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -27,10 +27,17 @@
 </style>
 </head>
 <body>
-<%
+<%	
+	List<ProductDto> cart = (ArrayList<ProductDto>)session.getAttribute("cart");
 	request.setAttribute("cart_request", session.getAttribute("cart"));
-
-%>
+	
+%>	
+	<c:choose>
+	<c:when test="${cart == null }">
+		<h2>장바구니가 비었습니다.</h2>
+		<a href="productList.jsp">상품 담으러 가기</a> <br><br>
+	</c:when>
+	<c:otherwise>
 	<h2>장바구니 목록</h2>
 		<hr>
 		<table>
@@ -40,16 +47,19 @@
 				<th>색깔</th>
 				<th>수량</th>
 			</tr>	
-		<c:forEach var="productDto" items="${ cart_request}" >
+		<c:forEach var="productDto" items="${ cart_request}" varStatus="loop" >
 			<tr>
-				<td>${productDto.num}</td>
+				<td>${productDto.num}</td> <!-- 자동으로 getter 호출 -->
 				<td>${productDto.product}</td>
 				<td>${productDto.color}</td>
 				<td>${productDto.quantity}</td>
 			</tr>
 		</c:forEach>	
 		</table>
-		
+		<a href="productList.jsp">상품 더 담기</a> <br><br>
+		<a href="cartRemove.jsp">장바구니 비우기</a> <br><br>
+	</c:otherwise>
+	</c:choose>
 		
 </body>
 </html>

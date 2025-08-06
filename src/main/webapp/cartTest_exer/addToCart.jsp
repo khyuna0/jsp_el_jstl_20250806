@@ -16,16 +16,16 @@
 		String product = request.getParameter("product");
 		String productColor = request.getParameter("productColor");
 		String quantity = request.getParameter("quantity");
-	
+		// int iQuantity = Integer.parseInt("quantity");
+		
 		List<ProductDto> cart = (ArrayList<ProductDto>)session.getAttribute("cart");
 		
 		if (cart == null) { 
 			cart = new ArrayList<ProductDto>(); 
 		}
 		
-		System.out.println(cart.size()+ 1);
 		cart.add(new ProductDto((cart.size()+ 1),product, productColor, quantity));
-		session.setAttribute("cart", cart);
+		session.setAttribute("cart", cart); // 세션에 상품 목록 저장
 	%>
 	
 		<h2>장바구니에 색상이 <%=productColor%>인 <%= product %>이(가) <%= quantity %>개 추가되었습니다.</h2>
