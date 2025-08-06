@@ -13,7 +13,7 @@
 <title>자유게시판</title>
 <style type="text/css">
 	table {
-		width: 500px;
+		width: 600px;
 		border-collapse: collapse;
 	}
 	th, td {
